@@ -31,7 +31,7 @@ import java.util.EnumSet;
 
 public class TPMCommands {
 	public static LiteralArgumentBuilder<CommandSourceStack> register() {
-		return Commands.literal("tpmaster").then(
+		return Commands.literal("tpm").then(
 				Commands.literal("accept").requires(stack -> stack.hasPermission(TPMCommonConfig.ACCEPT_DENY_PERMISSION_LEVEL.get()))
 						.executes(context -> accept(context.getSource(), context.getSource().getEntityOrException()))
 		).then(
