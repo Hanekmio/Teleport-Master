@@ -1,7 +1,7 @@
 modLoader="javafml"
 loaderVersion="[47,)"
 license="MIT"
-issueTrackerURL="https://github.com/Hanekmio/Teleport-Master-Simplified/issues"
+issueTrackerURL="https://github.com/Viola-Siemens/Teleport-Master/issues"
 
 [[mods]]
 modId="tpmaster"
