@@ -32,13 +32,13 @@ import java.util.EnumSet;
 public class TPMCommands {
 	public static LiteralArgumentBuilder<CommandSourceStack> register() {
 		return Commands.literal("tpm").then(
-				Commands.literal("accept").requires(stack -> stack.hasPermission(TPMCommonConfig.ACCEPT_DENY_PERMISSION_LEVEL.get()))
+				Commands.literal("a").requires(stack -> stack.hasPermission(TPMCommonConfig.ACCEPT_DENY_PERMISSION_LEVEL.get()))
 						.executes(context -> accept(context.getSource(), context.getSource().getEntityOrException()))
 		).then(
-				Commands.literal("deny").requires(stack -> stack.hasPermission(TPMCommonConfig.ACCEPT_DENY_PERMISSION_LEVEL.get()))
+				Commands.literal("d").requires(stack -> stack.hasPermission(TPMCommonConfig.ACCEPT_DENY_PERMISSION_LEVEL.get()))
 						.executes(context -> deny(context.getSource().getEntityOrException()))
 		).then(
-				Commands.literal("away").requires(stack -> stack.hasPermission(TPMCommonConfig.AWAY_PERMISSION_LEVEL.get()))
+				Commands.literal("aw").requires(stack -> stack.hasPermission(TPMCommonConfig.AWAY_PERMISSION_LEVEL.get()))
 						.executes(context -> away(context.getSource(), context.getSource().getEntityOrException(), 0, true, null))
 						.then(
 								Commands.argument("distance", IntegerArgumentType.integer(0, 10000))
@@ -49,7 +49,7 @@ public class TPMCommands {
 										)
 						)
 		).then(
-				Commands.literal("request").requires(stack -> stack.hasPermission(TPMCommonConfig.REQUEST_PERMISSION_LEVEL.get()))
+				Commands.literal("r").requires(stack -> stack.hasPermission(TPMCommonConfig.REQUEST_PERMISSION_LEVEL.get()))
 						.then(
 								Commands.argument("target", EntityArgument.entity())
 										.executes(context -> request(context.getSource(), context.getSource().getEntityOrException(), EntityArgument.getEntity(context, "target"), ITeleportable.RequestType.ASK))
@@ -63,38 +63,38 @@ public class TPMCommands {
 										)
 						)
 		).then(
-				Commands.literal("spawn").requires(stack -> stack.hasPermission(TPMCommonConfig.SPAWN_PERMISSION_LEVEL.get()))
+				Commands.literal("sp").requires(stack -> stack.hasPermission(TPMCommonConfig.SPAWN_PERMISSION_LEVEL.get()))
 						.executes(context -> spawn(context.getSource(), context.getSource().getEntityOrException()))
 		).then(
-				Commands.literal("sethome").requires(stack -> stack.hasPermission(TPMCommonConfig.HOME_PERMISSION_LEVEL.get()))
+				Commands.literal("sh").requires(stack -> stack.hasPermission(TPMCommonConfig.HOME_PERMISSION_LEVEL.get()))
 						.executes(context -> sethome(context.getSource().getEntityOrException(), 0))
 						.then(
 								Commands.argument("index", IntegerArgumentType.integer(0, TPMCommonConfig.MAX_HOME_COUNT.get() - 1))
 										.executes(context -> sethome(context.getSource().getEntityOrException(), IntegerArgumentType.getInteger(context, "index")))
 						)
 		).then(
-				Commands.literal("home").requires(stack -> stack.hasPermission(TPMCommonConfig.HOME_PERMISSION_LEVEL.get()))
+				Commands.literal("h").requires(stack -> stack.hasPermission(TPMCommonConfig.HOME_PERMISSION_LEVEL.get()))
 						.executes(context -> home(context.getSource(), context.getSource().getEntityOrException(), 0))
 						.then(
 								Commands.argument("index", IntegerArgumentType.integer(0, TPMCommonConfig.MAX_HOME_COUNT.get() - 1))
 										.executes(context -> home(context.getSource(), context.getSource().getEntityOrException(), IntegerArgumentType.getInteger(context, "index")))
 						)
 		).then(
-				Commands.literal("back").requires(stack -> stack.hasPermission(TPMCommonConfig.BACK_PERMISSION_LEVEL.get()))
+				Commands.literal("b").requires(stack -> stack.hasPermission(TPMCommonConfig.BACK_PERMISSION_LEVEL.get()))
 						.executes(context -> back(context.getSource(), context.getSource().getEntityOrException()))
 		).then(
-				Commands.literal("remove").requires(stack -> stack.hasPermission(TPMCommonConfig.REMOVE_PERMISSION_LEVEL.get()))
+				Commands.literal("rm").requires(stack -> stack.hasPermission(TPMCommonConfig.REMOVE_PERMISSION_LEVEL.get()))
 						.then(
-								Commands.literal("home").then(
+								Commands.literal("h").then(
 										Commands.argument("index", IntegerArgumentType.integer(0, TPMCommonConfig.MAX_HOME_COUNT.get() - 1))
 												.executes(context -> removeHome(context.getSource().getEntityOrException(), IntegerArgumentType.getInteger(context, "index")))
 								)
 						)
 						.then(
-								Commands.literal("back").executes(context -> removeBack(context.getSource().getEntityOrException()))
+								Commands.literal("b").executes(context -> removeBack(context.getSource().getEntityOrException()))
 						)
 		).then(
-				Commands.literal("help").requires(stack -> stack.hasPermission(TPMCommonConfig.HELP_PERMISSION_LEVEL.get()))
+				Commands.literal("sos").requires(stack -> stack.hasPermission(TPMCommonConfig.HELP_PERMISSION_LEVEL.get()))
 						.executes(context -> help(context.getSource().getEntityOrException()))
 		);
 	}
