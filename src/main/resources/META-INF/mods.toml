@@ -6,7 +6,7 @@ issueTrackerURL="https://github.com/Hanekmio/Teleport-Master-SimpCommands/issues
 [[mods]]
 modId="tpmaster"
 version="20.1.0-SC"
-displayName="Teleport Master"
+displayName="Teleport Master SC"
 logoFile="logo.png"
 credits="Liu Dongyu; Simplified commands by Hanekmio"
 authors="Hexagram"
