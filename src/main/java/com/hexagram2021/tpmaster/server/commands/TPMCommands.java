@@ -38,7 +38,7 @@ public class TPMCommands {
 				Commands.literal("d").requires(stack -> stack.hasPermission(TPMCommonConfig.ACCEPT_DENY_PERMISSION_LEVEL.get()))
 						.executes(context -> deny(context.getSource().getEntityOrException()))
 		).then(
-				Commands.literal("aw").requires(stack -> stack.hasPermission(TPMCommonConfig.AWAY_PERMISSION_LEVEL.get()))
+				Commands.literal("w").requires(stack -> stack.hasPermission(TPMCommonConfig.AWAY_PERMISSION_LEVEL.get()))
 						.executes(context -> away(context.getSource(), context.getSource().getEntityOrException(), 0, true, null))
 						.then(
 								Commands.argument("distance", IntegerArgumentType.integer(0, 10000))
@@ -54,11 +54,11 @@ public class TPMCommands {
 								Commands.argument("target", EntityArgument.entity())
 										.executes(context -> request(context.getSource(), context.getSource().getEntityOrException(), EntityArgument.getEntity(context, "target"), ITeleportable.RequestType.ASK))
 										.then(
-												Commands.literal("ask")
+												Commands.literal("a")
 														.executes(context -> request(context.getSource(), context.getSource().getEntityOrException(), EntityArgument.getEntity(context, "target"), ITeleportable.RequestType.ASK))
 										)
 										.then(
-												Commands.literal("invite")
+												Commands.literal("i")
 														.executes(context -> request(context.getSource(), context.getSource().getEntityOrException(), EntityArgument.getEntity(context, "target"), ITeleportable.RequestType.INVITE))
 										)
 						)
@@ -83,7 +83,7 @@ public class TPMCommands {
 				Commands.literal("b").requires(stack -> stack.hasPermission(TPMCommonConfig.BACK_PERMISSION_LEVEL.get()))
 						.executes(context -> back(context.getSource(), context.getSource().getEntityOrException()))
 		).then(
-				Commands.literal("rm").requires(stack -> stack.hasPermission(TPMCommonConfig.REMOVE_PERMISSION_LEVEL.get()))
+				Commands.literal("de").requires(stack -> stack.hasPermission(TPMCommonConfig.REMOVE_PERMISSION_LEVEL.get()))
 						.then(
 								Commands.literal("h").then(
 										Commands.argument("index", IntegerArgumentType.integer(0, TPMCommonConfig.MAX_HOME_COUNT.get() - 1))
