@@ -20,12 +20,12 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 base {
-    archivesName = 'tpmaster'
+    archivesName = 'tpmsimplified'
 }
 
-version = '20.1.0s'
+version = '20.1.1s'
 group = 'com.hexagram2021.tpmaster'
-archivesBaseName = 'tpmaster'
+archivesBaseName = 'tpmsimplified'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -143,7 +143,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "Teleport Master",
+                "Specification-Title"     : "TPM Simplified",
                 "Specification-Vendor"    : "Hexagram",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
