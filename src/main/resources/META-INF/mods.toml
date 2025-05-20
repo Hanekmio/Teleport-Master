@@ -4,8 +4,8 @@ license="MIT"
 issueTrackerURL="https://github.com/Hanekmio/Teleport-Master-Simplified/issues"
 
 [[mods]]
-modId="tpmaster"
-version="20.1.0s"
+modId="tpmsimplified"
+version="20.1.1s"
 displayName="Teleport Master Simplified"
 logoFile="logo.png"
 credits="Liu Dongyu; Simplified commands by Hanekmio"
