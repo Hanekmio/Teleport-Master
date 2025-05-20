@@ -20,12 +20,12 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 base {
-    archivesName = 'tpmsimplified'
+    archivesName = 'tpmaster'
 }
 
-version = '20.1.1s'
+version = '20.1.1'
 group = 'com.hexagram2021.tpmaster'
-archivesBaseName = 'tpmsimplified'
+archivesBaseName = 'tpmaster'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
