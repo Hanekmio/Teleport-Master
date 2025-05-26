@@ -12,7 +12,7 @@ credits="Liu Dongyu; Simplified commands by Hanekmio"
 authors="Hexagram"
 
 description='''
-This mod adds some commands for teleporting.
+This mod adds some commands for teleporting, but commands are simplified!
 '''
 
 [[dependencies.tpmaster]]
