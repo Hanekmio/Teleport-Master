@@ -143,7 +143,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "TPM Simplified",
+                "Specification-Title"     : "Teleport Master",
                 "Specification-Vendor"    : "Hexagram",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
