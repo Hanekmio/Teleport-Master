@@ -2,7 +2,6 @@ modLoader="javafml"
 loaderVersion="[47,)"
 license="MIT"
 issueTrackerURL="https://github.com/Hanekmio/Teleport-Master-Simplified/issues"
-
 [[mods]]
 modId="tpmaster"
 version="20.1.1"
@@ -10,18 +9,13 @@ displayName="Teleport Master Simplified"
 logoFile="logo.png"
 credits="Liu Dongyu; Simplified commands by Hanekmio"
 authors="Hexagram"
-
-description='''
-This mod adds some commands for teleporting, but commands are simplified!
-'''
-
+description='''This mod adds some commands for teleporting, but commands are simplified!'''
 [[dependencies.tpmaster]]
     modId="forge"
     mandatory=true
     versionRange="[47,)"
     ordering="NONE"
     side="BOTH"
-
 [[dependencies.tpmaster]]
     modId="minecraft"
     mandatory=true
